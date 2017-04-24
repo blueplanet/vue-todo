@@ -1,0 +1,11 @@
+<head>
+  <script src='./js/vue.js'></script>
+</head>
+<h1>Todos</h1>
+<input v-model='newTodo'>
+
+<ul>
+  <li v-for="todo in todos">
+    {{ todo.name }}
+  </li>
+</ul>
