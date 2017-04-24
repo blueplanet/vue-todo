@@ -4,10 +4,11 @@
 <h1>Todos</h1>
 <div id="todo-app">
   <p>Task count: {{todos.length}}</p>
-  <input v-model='newTodo' @keyup.enter='addTodo'>
+  <input v-model='newTodo' @keyup.enter='addTodo' autofocus='true'>
 
   <ul>
     <li v-for="todo in todos">
+      <button @click="deleteTodo(todo)">Delete</button>
       {{ todo.title }}
     </li>
   </ul>
