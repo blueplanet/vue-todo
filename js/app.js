@@ -12,13 +12,28 @@ const app = new Vue({
 
       this.todos.push({
         title: value,
-        compeleted: false
-      })
+        compeleted: false,
+        newTask: '',
+        subTasks: []
+      });
 
       this.newTodo = ''
     },
     deleteTodo: function(todo) {
       this.todos.splice(this.todos.indexOf(todo), 1);
+    },
+    addTask: function(todo) {
+      let value = todo.newTask;
+      if (!value) {
+        return
+      }
+
+      todo.subTasks.push({
+        title: value,
+        compeleted: false
+      });
+
+      todo.newTask = ''
     }
   }
 });
