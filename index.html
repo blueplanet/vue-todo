@@ -4,20 +4,19 @@
 <h1>Todos</h1>
 <div id="todo-app">
   <p>Task count: {{todos.length}}, subtasks count: {{subTaskCount}}</p>
-  <input v-model='newTodo' @keyup.enter='addTodo' autofocus='true'>
-
   <ul>
     <li v-for="todo in todos">
       <button @click="deleteTodo(todo)">Delete</button>
       {{ todo.title }}
 
-      <input v-model='todo.newTask' @keyup.enter='addTask(todo)'>
       <ul>
         <li v-for='task in todo.subTasks'>
           {{ task.title }}
         </li>
+        <input v-model='todo.newTask' @keyup.enter='addTask(todo)'>
       </ul>
     </li>
+    <input v-model='newTodo' @keyup.enter='addTodo' autofocus='true'>
   </ul>
   <script src='./js/app.js'></script>
 </div>
