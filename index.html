@@ -3,7 +3,7 @@
 </head>
 <h1>Todos</h1>
 <div id="todo-app">
-  <p>Task count: {{todos.length}}</p>
+  <p>Task count: {{todos.length}}, subtasks count: {{subTaskCount}}</p>
   <input v-model='newTodo' @keyup.enter='addTodo' autofocus='true'>
 
   <ul>

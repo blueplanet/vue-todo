@@ -35,6 +35,16 @@ const app = new Vue({
 
       todo.newTask = ''
     }
+  },
+  computed: {
+    subTaskCount: function() {
+      let count = 0;
+      this.todos.forEach(function(todo) {
+        count += todo.subTasks.length;
+      });
+
+      return count;
+    }
   }
 });
 
